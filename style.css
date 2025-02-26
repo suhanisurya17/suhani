@@ -1,0 +1,234 @@
+/* general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* entire html */
+html {
+    scroll-behavior: smooth;
+    align-items: center;
+}
+
+/* Background Styling */
+.susu {
+    width: 100%;
+    height: 100px;
+    background-position: center;
+    align-items: center;
+    opacity: 70%;
+    padding: 10px 10%;
+    overflow: hidden;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    padding: 10px 0;
+}
+
+/* Navigation Menu List */
+nav ul {
+    display: flex; /* Makes list items horizontal */
+    justify-content: center; /* Centers the buttons in the navbar */
+    gap: 20px; /* Space between buttons */
+    list-style: none; /* Removes bullet points */
+    margin: 0; /* Removes extra margin */
+    padding: 0; /* Removes extra padding */
+    flex-grow: 1; /* Ensures the menu stretches to balance spacing */
+}
+
+/* Navigation List Items */
+nav ul li {
+    display: inline-block; /* Keeps list items inline */
+}
+
+/* Navigation Links */
+nav ul li a {
+    text-decoration: none; /* Removes underline */
+    color: #333; /* Text color */
+    font-weight: 400; /* Font weight */
+    font-size: 16px; /* Font size */
+    padding: 10px 20px; /* Adds clickable area around links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+/* Hover Effect for Links */
+nav ul li a:hover {
+    color: #de66e6; /* Changes color on hover */
+}
+
+/* Resume Button Container */
+nav div {
+    margin-left: auto; /* Pushes the resume button to the right */
+}
+
+/* Resume Button Styling */
+/* Styling the Resume Button */
+
+nav div .button.linkedin {
+    display: inline-block; /* Ensures the element behaves like a button */
+    text-decoration: none; /* Removes underlines */
+    padding: 10px 40px; /* Adds padding for better click area */
+    color: #fff; /* White text */
+    background: url('') no-repeat center center; /* Sets the background image */
+    background-size: contain; /* Scales the image to fit the button */
+    border: none; /* Removes default border */
+    cursor: pointer; /* Shows pointer on hover */
+    font-size: 14px; /* Adjusts font size */
+    transition: transform 0.3s ease; /* Adds a hover effect */
+}
+
+nav div .button.linkedin:hover {
+    transform: scale(1.1); /* Slightly enlarges the button on hover */
+    filter: brightness(1.2); /* Makes the button brighter on hover */
+}
+
+.container, .container1 {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-right: 150px;
+}
+
+
+.center-picture {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: 10;
+}
+
+.circle-picture {
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.circle-picture.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.circle-picture:hover {
+    animation: bounce 1s;
+    color: #111;
+            background: rgb(173, 255, 47, 0.4);
+            box-shadow: 0 0 100px rgb(173, 255, 47);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.circle1-picture {
+    position: absolute;
+    transition: left 0.5s, top 0.5s, opacity 0.5s;
+    opacity: 0;
+}
+
+.option {
+    font-family: "Poppins", sans-serif;
+}
+
+.circle1-picture.show {
+    opacity: 1;
+}
+
+.image-container {
+    position: relative;
+}
+
+.hover-image {
+    position: relative;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    z-index: 10;
+}
+
+.hover-image:hover + .tooltip {
+    display: block;
+}
+
+
+/* styling for projects section */
+
+#projects {
+    background-image: url('pictures/superclear-computer.png');
+    background-size: 2000 cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Center the image within the section */
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content within the section */
+    flex-direction: column;
+
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+#file-row {
+    transform: translate(5%, -50%);
+
+    margin-bottom: 40px;
+    display: flexbox;
+
+}
+
+#file {
+    margin-right: 35px;
+    height: 100px;
+    width: 110px;
+}
+
+#file:hover {
+        animation: bounce 1s;
+        color: #111;
+        /* background: rgb(173, 255, 47, 0.4);
+        box-shadow: 0 0 100px rgb(173, 255, 47); */
+}
+    
+@keyframes bounce {
+    0%, 100% 
+    {
+        Transform: scale(1);
+    }
+
+    50%
+    {
+        transform: scale(1.2);
+    }
+}
+    
+#headers {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
