@@ -232,3 +232,45 @@ h2 {
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
+#contact {
+    align-items: center;
+}
+
+.contact-form {
+            background-color: rgba(0, 0, 0, 0);
+            padding: 20px; /* Reduce padding if necessary */
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 20px auto; /* Reduce top/bottom margin */
+            margin-top: -75px;
+        }
+
+         .contact-form h2 {
+                    margin-top: -130;
+                }
+        .contact-form input, .contact-form textarea, .contact-form button {
+            width: 100%;
+            margin: 15px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: pink;
+            color: white;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+
+        #add-button {
+            height: 40px;
+            width: 40px;
+        }
+
+        #contact-profile {
+            height: 165px;
+            width: 140px;
+        }

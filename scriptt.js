@@ -11,7 +11,7 @@ function appear(centerSelector, circleSelector, radius) {
         picture.style.top = `${y}px`;
 
         setTimeout(() => {
-            picture.classList.add("show"); 
+            picture.classList.add("show");
         }, index * 500); // Adjust the delay as needed
     });
 }
