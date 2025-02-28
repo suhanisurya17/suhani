@@ -232,45 +232,97 @@ h2 {
     margin-top: 100px;
     margin-bottom: 100px;
 }
-
 #contact {
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
+.container-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Space between profile image and form section */
+    flex-direction: column;
+}
+
+/* Ensuring the buttons and text box are in a row */
+.add-container {
+    display: flex;
+    flex-direction: row; /* This makes the buttons and text box appear in a row */
+    align-items: center;
+    gap: 5px; /* Space between add buttons and input field */
+    margin-bottom: 110px;
+}
+
+/* Make the buttons stack vertically */
+.add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Styling for buttons */
+#add-button {
+    height: 40px;
+    width: 40px;
+}
+
+/* Contact form styling */
 .contact-form {
-            background-color: rgba(0, 0, 0, 0);
-            padding: 20px; /* Reduce padding if necessary */
-            border-radius: 10px;
-            max-width: 400px;
-            margin: 20px auto; /* Reduce top/bottom margin */
-            margin-top: -75px;
-        }
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+}
 
-         .contact-form h2 {
-                    margin-top: -130;
-                }
-        .contact-form input, .contact-form textarea, .contact-form button {
-            width: 100%;
-            margin: 15px 0;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            background-color: pink;
-            color: white;
-            cursor: pointer;
-        }
-        .contact-form button:hover {
-            background-color: #0056b3;
-        }
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
 
-        #add-button {
-            height: 40px;
-            width: 40px;
-        }
+.contact-form button {
+    background-color: pink;
+    color: white;
+    cursor: pointer;
+}
 
-        #contact-profile {
-            height: 165px;
-            width: 140px;
-        }
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Fixing incorrect ID selector to match HTML */
+.column {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    height: 312px;
+    position: relative;
+    top: -50px; /* Moves it up */
+}
+
+
+
+/* Fix typo in contact profile */
+#contact-profile {
+    height: 150px;
+    width: 120px;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    border: 2px solid #b4b5b8; /* Change border color to black */
+    outline: none; /* Removes default blue outline */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+    padding: 10px;
+    background-color: #f0f2f5;
+}
