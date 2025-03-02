@@ -75,13 +75,25 @@ nav div .button.linkedin {
     text-decoration: none; /* Removes underlines */
     padding: 10px 40px; /* Adds padding for better click area */
     color: #fff; /* White text */
-    background: url('') no-repeat center center; /* Sets the background image */
+    background: url('pictures/linkedin.svg') no-repeat center center; /* Sets the background image */
     background-size: contain; /* Scales the image to fit the button */
     border: none; /* Removes default border */
     cursor: pointer; /* Shows pointer on hover */
     font-size: 14px; /* Adjusts font size */
     transition: transform 0.3s ease; /* Adds a hover effect */
+    background-color: pink;
 }
+
+nav div .button.resume {
+    border-radius: 20px;
+    height: 30px;
+    width: 100px;
+}
+
+nav div .button.resume:hover {
+    background-color: white;
+}
+
 
 nav div .button.linkedin:hover {
     transform: scale(1.1); /* Slightly enlarges the button on hover */
