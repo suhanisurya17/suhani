@@ -366,3 +366,24 @@ h2 {
     text-decoration: none;
     cursor: pointer;
 }
+.file-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: transparent;
+    background-image: url("pictures/file.png");
+    margin-right: 35px;
+
+    background-size: 100 cover;
+
+
+}
+
+.file-button:hover {
+    background-color: #0056b3;
+}

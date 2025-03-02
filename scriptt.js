@@ -13,6 +13,14 @@ function appear(centerSelector, circleSelector, radius) {
   });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll(".file");
+  const modal = document.getElementById("projectModal");
+  const closeBtn = document.querySelector(".close-btn");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDescription = document.getElementById("modal-description");
+  const modalImage = document.getElementById("modal-image");
+
 function shootout(centerSelector, circleSelector, radius) {
   const centerPicture = document.querySelector(centerSelector);
   const circlePictures = document.querySelectorAll(circleSelector);
@@ -37,6 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
   appear(".center-picture", ".circle-picture", 300);
   // Add more calls as needed
 });
+// Ensure this function definition is placed before the call to appear_menu
+function appear_menu(selector) {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.classList.add("show");
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
   appear_menu(".option");
   // Add more calls as needed
@@ -51,50 +66,51 @@ document.getElementById("about-button").addEventListener("click", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".file");
+  const buttons = document.querySelectorAll(".file-button");
   const modal = document.getElementById("projectModal");
   const closeBtn = document.querySelector(".close-btn");
   const modalTitle = document.getElementById("modal-title");
   const modalDescription = document.getElementById("modal-description");
   const modalImage = document.getElementById("modal-image");
-  //Project data
+
+  // Project data
   const projectData = {
     "1": {
       title: "Project 1",
       description: "Description for project 1.",
-      image: "images/project1.jpg", // Corrected path!
+      image: "images/project1.jpg"
     },
     "2": {
       title: "Project 2",
       description: "Description for project 2.",
-      image: "images/project2.jpg", // Corrected path!
+      image: "images/project2.jpg"
     },
     "3": {
       title: "Project 3",
       description: "Description for project 3.",
-      image: "images/project3.jpg", // Corrected path!
+      image: "images/project3.jpg"
     },
     "4": {
       title: "Project 4",
       description: "Description for project 4.",
-      image: "images/project4.jpg", // Corrected path!
+      image: "images/project4.jpg"
     },
     "5": {
       title: "Project 5",
       description: "Description for project 5.",
-      image: "images/project5.jpg", // Corrected path!
+      image: "images/project5.jpg"
     },
     "6": {
       title: "Project 6",
       description: "Description for project 6.",
-      image: "images/project6.jpg", // Corrected path!
+      image: "images/project6.jpg"
     },
   };
+
   // Click event to open modal and display project details
-  images.forEach((image) => {
-    image.addEventListener("click", function () {
-      const projectId = image.getAttribute("data-project");
-      console.log("image clicked!");
+  buttons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const projectId = button.getAttribute("data-project");
       const project = projectData[projectId];
       if (project) {
         modalTitle.textContent = project.title;
@@ -103,11 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "block";
       }
     });
-  }); //Closing Bracket!!
+  });
+
   // Close modal when close button is clicked
   closeBtn.addEventListener("click", function () {
     modal.style.display = "none";
   });
+
   // Close modal if the user clicks outside the modal
   window.addEventListener("click", function (event) {
     if (event.target === modal) {
