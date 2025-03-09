@@ -341,7 +341,7 @@ h2 {
 }
 
 .contact-form button {
-    background-color: #7fd7f5;
+    background-color: #d4d4d4;
     color: white;
     cursor: pointer;
 }
@@ -479,3 +479,10 @@ h2 {
     margin: auto; /* Centers the SVG */
 }
 
+
+.picture {
+
+    width: 300px;
+    height: 150px;
+    margin-top: 20px;
+}

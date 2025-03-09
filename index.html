@@ -66,7 +66,6 @@
         </section>
         <h2 id="headings">check out my projects!</h2>
 
-        <h2 id="headings">programming projects!</h2>
         <section id="projects">
             <div id="file-row">
                 <a href="javascript:void(0);" onclick="openModal(1)">
@@ -84,16 +83,16 @@
             </div>
 
         <div id="file-row">
-            <a href="javascript:void(0);" onclick="openModal(4)">
+            <a href="duckie.html">
                 <img class="file" src="pictures/file.png">
             </a>
-            <a href="javascript:void(0);" onclick="openModal(5)">
+            <a href="donut.html">
                 <img class="file" src="pictures/file.png">
             </a>
-            <a href="javascript:void(0);" onclick="openModal(6)">
+            <a href="icecream.html">
                 <img class="file" src="pictures/file.png">
             </a>
-            <a href="projects.html" onclick="window.location.href=projects.html">
+            <a href="camera.html">
                 <img class="file" src="pictures/file.png">
             </a>
         </div>
@@ -101,15 +100,19 @@
 
     <!-- Modals for each project -->
     <div id="projectModal1" class="modal">
-        <div class="modal-content">
+        <div class="modal-content"
+
+
             <span class="close" onclick="closeModal(1)">&times;</span>
             <h2>Traffic Light Simulator</h2>
             <p>
                 This project simulates a traffic light system using a Raspberry Pi Pico and MicroPython. It controls LEDs to represent the red, yellow, and green lights, cycling through them to mimic real-world traffic signals.
             </p>
             <div class="gif-container">
-                <img src="pictures/traffic-light.jpeg" alt="Traffic Light Simulation GIF">
+                <img src="pictures/traffic-light.jpeg" alt="Traffic Light Simulation GIF" class="picture">
             </div>
+
+
             <p>
                 View the full project on
                 <a href="https://github.com/suhanisurya17/traffic-light-simulator" target="_blank">
@@ -119,102 +122,148 @@
         </div>
     </div>
 
+
     <div id="projectModal2" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal(2)">&times;</span>
-            <div id="canvasContainer" style="align-items: center;">
-                <canvas id="cadCanvas" width="1600" height="1200"></canvas>
-            </div>
-            <script>
-            const canvas = document.getElementById('cadCanvas');
-            const ctx = canvas.getContext('2d');
-            const container = document.getElementById('canvasContainer'); // Make sure this line is present
+        <div class="modal-content"
 
-            // Load the SVG file
-            const img = new Image();
-            img.onload = function() {
-                ctx.drawImage(img, 0, 0);
-            };
-            img.src = 'pictures/range-rover.svg'; // Replace with the path to your SVG file
 
-            // Zoom and pan variables
-            let scale = 1;
-            let originX = 0;
-            let originY = 0;
+        <span class="close" onclick="closeModal(2)">&times;</span>
+        <h2>Temperature Simulator</h2>
+        <p>
+            This project simulates a traffic light system using a Raspberry Pi Pico and MicroPython.
+            It controls LEDs to represent the red, yellow, and green lights,
+            cycling through them to mimic real-world traffic signals.
 
-            // Handle mouse wheel for zooming
-            container.addEventListener('wheel', function(event) {
-                event.preventDefault();
-                const zoomFactor = 1.1;
-                const mouseX = event.offsetX;
-                const mouseY = event.offsetY;
+            This project is a temperature sensor that I created with a twist. It has an OLED display, along with a potentiometer.
+            In addition, it contains a button that allows you to toggle through three different data types, the temperature, humidity and threshold.
 
-                if (event.deltaY < 0) {
-                    // Zoom in
-                    scale *= zoomFactor;
-                    originX = mouseX - (mouseX - originX) * zoomFactor;
-                    originY = mouseY - (mouseY - originY) * zoomFactor;
-                } else {
-                    // Zoom out
-                    scale /= zoomFactor;
-                    originX = mouseX - (mouseX - originX) / zoomFactor;
-                    originY = mouseY - (mouseY - originY) / zoomFactor;
-                }
-
-                draw();
-            });
-
-            // Handle mouse drag for panning
-            let isDragging = false;
-            let startX, startY;
-
-            container.addEventListener('mousedown', function(event) {
-                isDragging = true;
-                startX = event.clientX - originX;
-                startY = event.clientY - originY;
-            });
-
-            container.addEventListener('mousemove', function(event) {
-                if (isDragging) {
-                    originX = event.clientX - startX;
-                    originY = event.clientY - startY;
-                    draw();
-                }
-            });
-
-            container.addEventListener('mouseup', function() {
-                isDragging = false;
-            });
-
-            container.addEventListener('mouseleave', function() {
-                isDragging = false;
-            });
-
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.save();
-                ctx.translate(originX, originY);
-                ctx.scale(scale, scale);
-                ctx.drawImage(img, 0, 0);
-                ctx.restore();
-            }
-        </script>
-
+        </p>
+        <div class="gif-container">
+            <img src="pictures/temp-sensor.jpeg" alt="Traffic Light Simulation GIF" class="picture">
         </div>
+
+
+        <p>
+            View the full project on
+            <a href="https://github.com/suhanisurya17/traffic-light-simulator" target="_blank">
+                GitHub
+            </a>.
+        </p>
     </div>
+    </div>
+
+
+    <!--    <div id="projectModal2" class="modal">-->
+<!--        <div class="modal-content">-->
+<!--            <span class="close" onclick="closeModal(2)">&times;</span>-->
+<!--            <div id="canvasContainer" style="align-items: center;">-->
+<!--                <canvas id="cadCanvas" width="1600" height="1200"></canvas>-->
+<!--            </div>-->
+<!--            <script>-->
+<!--            const canvas = document.getElementById('cadCanvas');-->
+<!--            const ctx = canvas.getContext('2d');-->
+<!--            const container = document.getElementById('canvasContainer'); // Make sure this line is present-->
+
+<!--            // Load the SVG file-->
+<!--            const img = new Image();-->
+<!--            img.onload = function() {-->
+<!--                ctx.drawImage(img, 0, 0);-->
+<!--            };-->
+<!--            img.src = 'pictures/range-rover.svg'; // Replace with the path to your SVG file-->
+
+<!--            // Zoom and pan variables-->
+<!--            let scale = 1;-->
+<!--            let originX = 0;-->
+<!--            let originY = 0;-->
+
+<!--            // Handle mouse wheel for zooming-->
+<!--            container.addEventListener('wheel', function(event) {-->
+<!--                event.preventDefault();-->
+<!--                const zoomFactor = 1.1;-->
+<!--                const mouseX = event.offsetX;-->
+<!--                const mouseY = event.offsetY;-->
+
+<!--                if (event.deltaY < 0) {-->
+<!--                    // Zoom in-->
+<!--                    scale *= zoomFactor;-->
+<!--                    originX = mouseX - (mouseX - originX) * zoomFactor;-->
+<!--                    originY = mouseY - (mouseY - originY) * zoomFactor;-->
+<!--                } else {-->
+<!--                    // Zoom out-->
+<!--                    scale /= zoomFactor;-->
+<!--                    originX = mouseX - (mouseX - originX) / zoomFactor;-->
+<!--                    originY = mouseY - (mouseY - originY) / zoomFactor;-->
+<!--                }-->
+
+<!--                draw();-->
+<!--            });-->
+
+<!--            // Handle mouse drag for panning-->
+<!--            let isDragging = false;-->
+<!--            let startX, startY;-->
+
+<!--            container.addEventListener('mousedown', function(event) {-->
+<!--                isDragging = true;-->
+<!--                startX = event.clientX - originX;-->
+<!--                startY = event.clientY - originY;-->
+<!--            });-->
+
+<!--            container.addEventListener('mousemove', function(event) {-->
+<!--                if (isDragging) {-->
+<!--                    originX = event.clientX - startX;-->
+<!--                    originY = event.clientY - startY;-->
+<!--                    draw();-->
+<!--                }-->
+<!--            });-->
+
+<!--            container.addEventListener('mouseup', function() {-->
+<!--                isDragging = false;-->
+<!--            });-->
+
+<!--            container.addEventListener('mouseleave', function() {-->
+<!--                isDragging = false;-->
+<!--            });-->
+
+<!--            function draw() {-->
+<!--                ctx.clearRect(0, 0, canvas.width, canvas.height);-->
+<!--                ctx.save();-->
+<!--                ctx.translate(originX, originY);-->
+<!--                ctx.scale(scale, scale);-->
+<!--                ctx.drawImage(img, 0, 0);-->
+<!--                ctx.restore();-->
+<!--            }-->
+<!--        </script>-->
+
+<!--        </div>-->
+<!--            </div>-->
+<!--    </div>-->
 
     <div id="projectModal3" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal(3)">&times;</span>
-            <h2>Project 3</h2>
-            <p>Details about project 3.</p>
+            <h2>Just Relax</h2>
+            <p>Just Relax is a student-focused productivity program designed to enhance study sessions through
+                meditation and immersive study ambiances.
+                Built using Processing, it features Studyscapes,
+                allowing users to select environments like a library,
+                desk, or cafe, along with a Pomodoro timer for
+                structured focus. The interface, designed in Figma,
+                incorporates intuitive UI/UX elements such as a navbar
+                and menu for seamless navigation.
+            </p>
+
+            <img src="pictures/just-relax.jpeg" alt="Just Relax" class="picture">
         </div>
     </div>
 
     <div id="projectModal4" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal(4)">&times;</span>
-            <h2>Project 4</h2>
+            <h2>Valentines Day Projects</h2>
+            <p>Here are two valentines day projects that I did:
+            </p>
+            <p>1. Will you be my Valentine</p>
+            <p>2. Compatability Calculator</p>
         </div>
     </div>
 
@@ -288,60 +337,6 @@
             }
         }
     }
-</script>
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-
-    <script>
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // (color, intensity)
-    scene.add(ambientLight);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
-
-    // Enable Orbit Controls
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true; // Smooth movements
-    controls.dampingFactor = 0.05;
-    controls.screenSpacePanning = false;
-    controls.minDistance = 1; // Minimum zoom distance
-    controls.maxDistance = 10; // Maximum zoom distance
-
-    // Load the GLTF model
-    const loader = new THREE.GLTFLoader();
-    loader.load('pictures/icecream.glb', function (gltf) {
-        scene.add(gltf.scene);
-    });
-
-    // Camera position
-    camera.position.set(0, 1, 5);
-
-    // Lighting
-    const light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(0, 1, 1).normalize();
-    scene.add(light);
-
-    // Animation loop
-    function animate() {
-        requestAnimationFrame(animate);
-        controls.update(); // Update orbit controls
-        renderer.render(scene, camera);
-    }
-    animate();
-
-    // Resize handling
-    window.addEventListener('resize', () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-    });
 </script>
 
     <h2>check out my experience!</h2>
