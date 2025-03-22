@@ -338,11 +338,142 @@
         }
     }
 </script>
-<!-- 
-    <h2>check out my experience!</h2>
-    <section id="experience">
-     </section> -->
 
+    <h2>check out my experience!</h2>
+    <section id="experience" class="experience-container"></section>
+<style>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      margin: 50px 0;
+    }
+    .experience-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .experience {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      padding: 30px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+    }
+    .experience.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .experience h3 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    .experience .company {
+      font-size: 1.2rem;
+      color: #555;
+      margin: 10px 0;
+    }
+    .experience .period {
+      font-size: 1rem;
+      color: #777;
+    }
+    .experience ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+    .experience ul li {
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .experience {
+        padding: 20px;
+      }
+    }
+  </style>
+
+    <script>
+  const experiences = [
+    {
+      title: "Rail Systems Intern",
+      company: "Hatch",
+      location: "Mississauga, ON",
+      period: "Jan 2025 – Present",
+      description: [
+        "Executed tasks for Rail and Transit projects involving signaling, traction power, communications (Radio, Fiber optics, CCTV, Intercom, Public Announcement), SCADA, Rail Track, Safety Systems Assurance, Systems Integration, and Systems Engineering.",
+        "Assisted with technical design reviews, calculations checks, and power distribution system designs, while coordinating with technicians and related disciplines to produce design deliverables.",
+        "Supported senior engineers and designers, contributed to project completion, and enhanced technical communication and report writing skills."
+      ]
+    },
+    {
+      title: "Software Developer",
+      company: "First Robotics - Team 3161",
+      location: "Oakville, ON",
+      period: "Sept 2023 – Jan 2024",
+      description: [
+        "Implemented proportional–integral–derivative (PID) to improve control and mobility in the robot’s arm by 15%.",
+        "Developed Java-based processes for efficient robot movement.",
+        "Created detailed documentation and reports for software modules, facilitating future maintenance."
+      ]
+    },
+    {
+      title: "Social Media & Marketing Intern",
+      company: "The Food Society Canada",
+      location: "Toronto, ON",
+      period: "Feb 2024 – Present",
+      description: [
+        "Helped grow Food Society Canada’s social media audience by 2,000 people.",
+        "Optimized content strategy by analyzing post-performance data to maximize engagement.",
+        "Leveraged trending topics, incorporated multimedia, and fostered two-way dialogue to enhance Instagram reach."
+      ]
+    }
+  ];
+
+  const container = document.getElementById('experience');
+
+  experiences.forEach(exp => {
+    const expDiv = document.createElement('div');
+    expDiv.classList.add('experience');
+
+    expDiv.innerHTML = `
+      <h3>${exp.title}</h3>
+      <div class="company">${exp.company} - ${exp.location}</div>
+      <div class="period">${exp.period}</div>
+      <ul>
+        ${exp.description.map(desc => `<li>${desc}</li>`).join('')}
+      </ul>
+    `;
+
+    container.appendChild(expDiv);
+  });
+
+  // Scroll animation logic
+  const handleScroll = () => {
+    const experiences = document.querySelectorAll('.experience');
+    const triggerBottom = window.innerHeight * 0.9;
+
+    experiences.forEach(exp => {
+      const expTop = exp.getBoundingClientRect().top;
+
+      if (expTop < triggerBottom) {
+        exp.classList.add('visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('load', handleScroll);
+</script>
     <section id="contact">
         <h2 style="margin-bottom: 50px">contact me!</h2>
         <img src="pictures/contact.png" style="margin-bottom: 50px"> -->
