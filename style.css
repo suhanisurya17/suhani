@@ -240,6 +240,7 @@ background-image: url('pictures/bag.png');
     align-items: center;
     justify-content: center; /* Center content within the section */
     flex-direction: column;
+    margin-bottom: 80px;
 
     }
 h2 {
