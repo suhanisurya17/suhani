@@ -14,7 +14,7 @@ function appear(centerSelector, circleSelector, radius) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  appear(".center-picture", ".circle-picture", 300);
+appear(".center-picture", ".circle-picture", 300);
 });
 
 function shootout(centerSelector, circleSelector, radius) {
@@ -69,3 +69,21 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+//this is for animating when scrolling to the about section
+
+// Animate when scrolling to the #about section
+const aboutSection = document.getElementById('about');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      shootout(".center1-picture", ".circle1-picture", 300);
+      observer.unobserve(aboutSection); // Optional: if you want the animation to happen only once
+    }
+  });
+}, {
+  threshold: 0.3 // means it triggers when 30% of #about is visible
+});
+
+observer.observe(aboutSection);

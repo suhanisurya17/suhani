@@ -487,3 +487,15 @@ h2 {
     height: 150px;
     margin-top: 20px;
 }
+
+
+#d-projects {
+    align-items: center;
+    justify-content: center; /* Center content within the section */
+    flex-direction: column;
+    display: flex;
+}
+
+iframe {
+    align: center;
+}
