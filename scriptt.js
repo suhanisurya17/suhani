@@ -87,3 +87,11 @@ const observer = new IntersectionObserver(entries => {
 });
 
 observer.observe(aboutSection);
+
+function openModal1(modalId) {
+  document.getElementById(modalId).style.display = "block";
+}
+
+function closeModal1(modalId) {
+  document.getElementById(modalId).style.display = "none";
+}
